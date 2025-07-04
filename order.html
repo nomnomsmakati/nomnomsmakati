@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>nomnoms – Order</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="nav-logo"><span class="brand-text">nomnoms</span></a>
+      <div class="hamburger" id="hamburger" aria-label="Open menu" tabindex="0">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="order.html">Order</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="order-hero">
+      <h1>Order & Contact</h1>
+      <p>Ready to taste the hype? Place your order or reach out to us below!</p>
+    </section>
+    <section class="order-content">
+      <form class="order-form">
+        <div style="text-align:center; margin: 2rem 0;">
+          <a href="https://m.me/nomnoms" target="_blank" class="messenger-btn">Contact us on Messenger</a>
+        </div>
+      </form>
+      <div class="contact-info">
+        <h2>Contact Us</h2>
+        <p>Email: <a href="mailto:nomnoms1406@gmail.com">nomnoms1406@gmail.com</a></p>
+        <p>Facebook: <a href="https://www.facebook.com/nomnomsmakati">nomnoms</a></p>
+        <p>Instagram: <a href="https://www.instagram.com/nomnomsmakati?igsh=MXB0NzN2djE2MTB1Yw==">@nomnomsmakati</a></p>
+        <p>Tiktok: <a href="https://www.tiktok.com/@nomnoms_mkt?_t=ZS-8xkNefdf8xF&_r=1">@nomnomsmakati</a></p>
+        <p>Location: Makati City</p>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-content">
+      <span>&copy; 2025 nomnoms. All rights reserved.</span>
+      <span class="footer-social">
+        <a href="https://www.facebook.com/nomnomsmakati">Facebook</a> |
+        <a href="https://www.instagram.com/nomnomsmakati?igsh=MXB0NzN2djE2MTB1Yw==">Instagram</a> |
+        <a href="https://www.tiktok.com/@nomnoms_mkt?_t=ZS-8xkNefdf8xF&_r=1">Tiktok</a>
+      </span>
+    </div>
+  </footer>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+    hamburger.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') navLinks.classList.toggle('open');
+    });
+  </script>
+</body>
+</html> 

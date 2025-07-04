@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>nomnoms – About</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="nav-logo"><span class="brand-text">nomnoms</span></a>
+      <div class="hamburger" id="hamburger" aria-label="Open menu" tabindex="0">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="order.html">Order</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="about-hero-max">
+      <h1>About nomnoms</h1>
+      <p>Our story, our passion, and our promise to you.</p>
+    </section>
+    <section class="about-max-grid">
+      <div class="about-max-card">
+        <h2>Our Story</h2>
+        <p>nomnoms started with a simple love for cookies and a dream to share homemade goodness with everyone. From our kitchen in Makati, we bake every batch with care, using only the best ingredients.</p>
+      </div>
+      <div class="about-max-card">
+        <h2>Our Values</h2>
+        <ul>
+          <li>Freshness in every bite</li>
+          <li>Quality ingredients</li>
+          <li>Homemade with love</li>
+          <li>Community and customer care</li>
+        </ul>
+      </div>
+      <div class="about-max-card">
+        <h2>What Makes Us Special?</h2>
+        <p>We believe cookies should be more than just a treat—they should be an experience. That's why every nomnoms cookie is soft, flavorful, and made to bring a smile to your face.</p>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-content">
+      <span>&copy; 2025 nomnoms. All rights reserved.</span>
+      <span class="footer-social">
+        <a href="#">Facebook</a> |
+        <a href="#">Instagram</a> |
+        <a href="#">Tiktok</a>
+      </span>
+    </div>
+  </footer>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+    hamburger.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') navLinks.classList.toggle('open');
+    });
+  </script>
+</body>
+</html> 

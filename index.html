@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>nomnoms – Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="nav-logo"><span class="brand-text">nomnoms</span></a>
+      <div class="hamburger" id="hamburger" aria-label="Open menu" tabindex="0">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="order.html">Order</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="hero split-hero">
+      <div class="hero-text">
+        <h1>Welcome to nomnoms</h1>
+        <p>🍪 Introducing n𝐨𝐦n𝐨𝐦𝐬 – Your New Favorite Munch! 🍪
+          <br>You know that sound you make when something's so good, your mouth just goes, "𝘮𝘮𝘮... 𝘯𝘰𝘮 𝘯𝘰𝘮 𝘯𝘰𝘮"?
+          <br>That's the vibe. That's n𝐨𝐦n𝐨𝐦𝐬. 😋
+          <br>Baked fresh with real butter, melty premium chocolate chips, and a whole lot of love — every cookie brings soft centers, golden edges, and that can't-stop-won't-stop kind of bite.
+          <br>Whether you're sharing with friends or keeping the box all to yourself (no judgment), one thing's guaranteed: it's gonna be nomnom time.</p>
+        <a href="order.html" class="cta-btn">Order Now</a>
+      </div>
+      <div class="hero-image">
+        <img src="nomnomslogo.png" alt="NomNoms Hero" />
+      </div>
+    </section>
+    <section class="highlights">
+      <div class="highlight-card">
+        <h2>Freshly Baked</h2>
+        <p>Every cookie is baked fresh with real butter and premium chocolate chips.</p>
+      </div>
+      <div class="highlight-card">
+        <h2>Perfect for Any Occasion</h2>
+        <p>Gift, share, or treat yourself—nomnoms are perfect for every moment.</p>
+      </div>
+      <div class="highlight-card">
+        <h2>Delivery</h2>
+        <p>We deliver every Wednesday & Saturday. Enjoy cookies at your doorstep!</p>
+      </div>
+    </section>
+    <section class="menu-hero">
+      <h1>Our Cookie</h1>
+      <p>We bake one thing, and we do it best: the ultimate Classic Chocolate Chip Cookie.</p>
+    </section>
+    <section class="menu-grid single-variant">
+      <div class="menu-card">
+        <img src="photos/1.jpeg" alt="Classic Choco Chip">
+        <h2>Classic Chocolate Chip Cookie</h2>
+        <p>Soft, chewy, and loaded with premium chocolate chips. Baked fresh with real butter and a whole lot of love.</p>
+        <span class="price">₱200 / box of 5 delicious cookies</span>
+      </div>
+    </section>
+    <section class="gallery-section">
+      <h1>Gallery</h1>
+      <div class="carousel" id="carousel">
+        <button class="carousel-arrow left" id="carouselPrev" aria-label="Previous image">&#8592;</button>
+        <div class="carousel-track" id="carouselTrack">
+          <img src="photos/1.jpeg" alt="NomNoms Cookie 1" class="carousel-img active">
+          <img src="photos/2.jpeg" alt="NomNoms Cookie 2" class="carousel-img">
+          <img src="photos/3.jpeg" alt="NomNoms Cookie 3" class="carousel-img">
+          <img src="photos/4.jpeg" alt="NomNoms Cookie 4" class="carousel-img">
+        </div>
+        <button class="carousel-arrow right" id="carouselNext" aria-label="Next image">&#8594;</button>
+      </div>
+      <div class="carousel-indicators" id="carouselIndicators">
+        <span class="indicator active" data-slide="0"></span>
+        <span class="indicator" data-slide="1"></span>
+        <span class="indicator" data-slide="2"></span>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-content">
+      <span>&copy; 2025 nomnoms. All rights reserved.</span>
+      <span class="footer-social">
+        <a href="https://www.facebook.com/nomnomsmakati">Facebook</a> |
+        <a href="https://www.instagram.com/nomnomsmakati/?igsh=MXB0NzN2djE2MTB1Yw%3D%3D#">Instagram</a> |
+        <a href="https://www.tiktok.com/@nomnoms_mkt?_t=ZS-8xkNefdf8xF&_r=1">Tiktok</a>
+      </span>
+    </div>
+  </footer>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+    hamburger.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') navLinks.classList.toggle('open');
+    });
+    const carouselTrack = document.getElementById('carouselTrack');
+    const carouselImgs = carouselTrack.querySelectorAll('.carousel-img');
+    const prevBtn = document.getElementById('carouselPrev');
+    const nextBtn = document.getElementById('carouselNext');
+    const indicators = document.querySelectorAll('.indicator');
+    let currentSlide = 0;
+    function showSlide(idx) {
+      if (idx < 0) idx = carouselImgs.length - 1;
+      if (idx >= carouselImgs.length) idx = 0;
+      carouselImgs.forEach((img, i) => {
+        img.classList.remove('active', 'prev', 'next');
+        if (i === idx) img.classList.add('active');
+        else if (i === (idx - 1 + carouselImgs.length) % carouselImgs.length) img.classList.add('prev');
+        else if (i === (idx + 1) % carouselImgs.length) img.classList.add('next');
+      });
+      indicators.forEach((dot, i) => {
+        dot.classList.toggle('active', i === idx);
+      });
+      currentSlide = idx;
+    }
+    prevBtn.addEventListener('click', () => {
+      showSlide(currentSlide - 1);
+    });
+    nextBtn.addEventListener('click', () => {
+      showSlide(currentSlide + 1);
+    });
+    indicators.forEach((dot, i) => {
+      dot.addEventListener('click', () => showSlide(i));
+    });
+    let startX = 0;
+    carouselTrack.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+    });
+    carouselTrack.addEventListener('touchend', (e) => {
+      let endX = e.changedTouches[0].clientX;
+      if (endX - startX > 40) prevBtn.click();
+      else if (startX - endX > 40) nextBtn.click();
+    });
+    showSlide(0);
+  </script>
+</body>
+</html> 
